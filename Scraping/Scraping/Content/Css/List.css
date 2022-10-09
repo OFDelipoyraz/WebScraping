@@ -1,0 +1,23 @@
+.nav {
+    background-color: black;
+    height: 60px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    width: 1900px;
+}
+
+.img {
+    width: 110px;
+}
+
+.image {
+    height: 50px;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+.aaa button {
+    margin-top: 7px;
+    margin-left: 40px;
+}

@@ -8,8 +8,22 @@ namespace Scraping.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
+        public int Id { get; set; }
         public string Marka { get; set; }
+        public string Fiyat { get; set; }
+        public string Link { get; set; }
 
-        public string Model { get; set; }
+
+        public Computers(int id, String marka, String fiyat, String link)
+        {
+            Id = id;
+            Marka = marka;
+            Fiyat = fiyat;
+            Link = link;
+
+        }
+
     }
+
+
 }

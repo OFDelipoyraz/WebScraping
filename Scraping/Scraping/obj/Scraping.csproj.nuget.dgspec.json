@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Doktor\\source\\repos\\Scraping\\Scraping\\Scraping.csproj": {}
+    "C:\\Users\\Doktor\\Desktop\\KODLAR!!!\\WebScraping\\Scraping\\Scraping\\Scraping.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Doktor\\source\\repos\\Scraping\\Scraping\\Scraping.csproj": {
+    "C:\\Users\\Doktor\\Desktop\\KODLAR!!!\\WebScraping\\Scraping\\Scraping\\Scraping.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Doktor\\source\\repos\\Scraping\\Scraping\\Scraping.csproj",
+        "projectUniqueName": "C:\\Users\\Doktor\\Desktop\\KODLAR!!!\\WebScraping\\Scraping\\Scraping\\Scraping.csproj",
         "projectName": "Scraping",
-        "projectPath": "C:\\Users\\Doktor\\source\\repos\\Scraping\\Scraping\\Scraping.csproj",
+        "projectPath": "C:\\Users\\Doktor\\Desktop\\KODLAR!!!\\WebScraping\\Scraping\\Scraping\\Scraping.csproj",
         "packagesPath": "C:\\Users\\Doktor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Doktor\\source\\repos\\Scraping\\Scraping\\obj\\",
+        "outputPath": "C:\\Users\\Doktor\\Desktop\\KODLAR!!!\\WebScraping\\Scraping\\Scraping\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Doktor\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -47,6 +47,14 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.17.1, )"
+            },
+            "ScrapySharp": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
             }
           },
           "imports": [
