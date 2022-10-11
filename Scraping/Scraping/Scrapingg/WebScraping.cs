@@ -15,7 +15,7 @@ namespace Scraping.Scrapingg
         }
         public List<String> Scrap_trendyol()
         {
-            List<String> URLLER = new List<String>();
+            List<String> URLLER = new System.Collections.Generic.List<String>();
             var ProductName = new List<ProductDetails>();
             for (int k = 1; k < 20; k++)
             {
