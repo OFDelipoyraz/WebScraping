@@ -6,38 +6,49 @@ namespace Scraping.Models
 {
     public class Computers
     {
-        private string v1;
-        private string v2;
-        private string v3;
 
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
         public int Id { get; set; }
         public string Marka { get; set; }
+        public string Model { get; set; }
         public string Fiyat { get; set; }
+        public string Isletim_Sistemi { get; set; }
+        public string Islemci { get; set; }
+        public string Islemci_Modeli { get; set; }
+        public string Islemci_Hizi { get; set; }
+        public string RAM { get; set; }
+        public string RAM_Turu { get; set; }
+        public string Disk_Kapasitesi { get; set; }
+        public string Ekran_Boyutu { get; set; }
+        public string Cozunurluk { get; set; }
+        public string Agırlık { get; set; }
+        public int Site_Id { get; set; }
         public string Link { get; set; }
 
 
-        public Computers(int id, String marka, String fiyat, String link)
-        {
-            Id = id;
-            Marka = marka;
-            Fiyat = fiyat;
-            Link = link;
-
-        }
 
         public Computers()
         {
         }
 
-        public Computers(string v1, string v2, string v3)
+
+        public Computers(int ıd, string marka, string model, string fiyat, string ısletim_Sistemi, string ıslemci, string ıslemci_Modeli, string ıslemci_Hizi, string rAM, string rAM_Turu, string disk_Kapasitesi, string ekran_Boyutu, string cozunurluk, string agırlık, int site_Id, string link)
         {
-            this.v1 = v1;
-            this.v2 = v2;
-            this.v3 = v3;
+            Id = ıd;
+            Marka = marka;
+            Model = model;
+            Fiyat = fiyat;
+            Isletim_Sistemi = ısletim_Sistemi;
+            Islemci = ıslemci;
+            Islemci_Modeli = ıslemci_Modeli;
+            Islemci_Hizi = ıslemci_Hizi;
+            RAM = rAM;
+            RAM_Turu = rAM_Turu;
+            Disk_Kapasitesi = disk_Kapasitesi;
+            Ekran_Boyutu = ekran_Boyutu;
+            Cozunurluk = cozunurluk;
+            Agırlık = agırlık;
+            Site_Id = site_Id;
+            Link = link;
         }
     }
-
-
 }
