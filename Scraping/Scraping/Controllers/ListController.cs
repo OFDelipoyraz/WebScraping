@@ -12,8 +12,12 @@ namespace Scraping.Controllers
         public IActionResult Index()
         {
 
-            WebScraping Scraping = new WebScraping();
-            List<Computers> Liste = Scraping.Teknosa();
+            //Teknosa Scraping = new Teknosa();
+            //List<Computers> Liste = Scraping.teknosa();
+            //N11 Scraping = new N11();
+            //List<Computers> Liste = Scraping.n11();
+            Amazon Scraping = new Amazon();
+            List<Computers> Liste = Scraping.amazon();
             ViewData["Trendyol"] = Liste;
             DeleteData();
             foreach (Computers Computers in Liste)
@@ -73,21 +77,21 @@ namespace Scraping.Controllers
                 "@site_id," +
                 "@link)";
             cmd.Connection = connection;
-            cmd.Parameters.AddWithValue("@marka", computers.Marka);
-            cmd.Parameters.AddWithValue("@model", computers.Model);
-            cmd.Parameters.AddWithValue("@fiyat", computers.Fiyat);
-            cmd.Parameters.AddWithValue("@isletim_sistemi", computers.Isletim_Sistemi);
-            cmd.Parameters.AddWithValue("@islemci", computers.Islemci);
-            cmd.Parameters.AddWithValue("@islemci_modeli", computers.Islemci_Modeli);
-            cmd.Parameters.AddWithValue("@islemci_hizi", computers.Islemci_Hizi);
-            cmd.Parameters.AddWithValue("@ram", computers.RAM);
-            cmd.Parameters.AddWithValue("@ram_turu", computers.RAM_Turu);
-            cmd.Parameters.AddWithValue("@disk_kapasitesi", computers.Disk_Kapasitesi);
-            cmd.Parameters.AddWithValue("@ekran_boyutu", computers.Ekran_Boyutu);
-            cmd.Parameters.AddWithValue("@cozunurluk", computers.Cozunurluk);
-            cmd.Parameters.AddWithValue("@agirlik", computers.Agırlık);
-            cmd.Parameters.AddWithValue("@site_id", computers.Site_Id);
-            cmd.Parameters.AddWithValue("@link", computers.Link);
+            cmd.Parameters.AddWithValue("@marka", computers.Marka ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@model", computers.Model ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@fiyat", computers.Fiyat ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@isletim_sistemi", computers.Isletim_Sistemi ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@islemci", computers.Islemci ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@islemci_modeli", computers.Islemci_Modeli ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@islemci_hizi", computers.Islemci_Hizi ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@ram", computers.RAM ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@ram_turu", computers.RAM_Turu ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@disk_kapasitesi", computers.Disk_Kapasitesi ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@ekran_boyutu", computers.Ekran_Boyutu ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@cozunurluk", computers.Cozunurluk ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@agirlik", computers.Agırlık ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@site_id", computers.Site_Id  );
+            cmd.Parameters.AddWithValue("@link", computers.Link ?? (object)DBNull.Value);
             cmd.ExecuteNonQuery();
             connection.Close();
 

@@ -5,21 +5,21 @@ using ScrapySharp.Network;
 
 namespace Scraping.Scrapingg
 {
-    public class WebScraping
+    public class Teknosa
     {
         List<Computers> pc = new List<Computers>();
         static ScrapingBrowser _scrapBrowser = new ScrapingBrowser();
-
-        public List<Computers> Teknosa()
+        public List<Computers> teknosa()
         {
             return Scrap_teknosa();
-
         }
         public List<Computers> Scrap_teknosa()
         {
             List<String> URLLER = new List<String>();
-
-            for (int k = 1; k < 2; k++)
+            List<String> Fiyatlar = new List<String>();
+            var yeni = ' ';
+            var yeni_para = "";
+            for (int k = 1; k < 3; k++)
             {
                 var sitehtml = "https://www.teknosa.com/laptop-notebook-c-116004?s=%3Arelevance&page=";
                 var html = GetHtml(sitehtml + k);
@@ -28,12 +28,22 @@ namespace Scraping.Scrapingg
                 {
                     try
                     {
+                        var mainFiyat = link.CssSelect("span.prc-last");
+                        foreach (var lin1k in mainFiyat)
+                        {
+                            for (int a = 17; a < lin1k.InnerHtml.Length; a++)
+                            {
+                                yeni = lin1k.InnerHtml[a];
+                                yeni_para += yeni;
+                            }
+                            Fiyatlar.Add(yeni_para);
+                            yeni_para = "";
+                        }
                         var mainURL = link.CssSelect("a");
                         foreach (var lin1k in mainURL)
                         {
                             URLLER.Add(lin1k.Attributes["href"].Value);
                         }
-
                     }
                     catch (Exception ex)
                     {
@@ -41,12 +51,9 @@ namespace Scraping.Scrapingg
                     }
                 }
             }
-
-            return Scrap_teknosa_ic(URLLER);
-
+            return Scrap_teknosa_ic(URLLER, Fiyatlar);
         }
-
-        public List<Computers> Scrap_teknosa_ic(List<String> URLLER)
+        public List<Computers> Scrap_teknosa_ic(List<String> URLLER, List<String> Fiyatlar)
         {
 
             int td_bulma(string veri, int th_sayisi, int td_sayisi, int k)
@@ -74,15 +81,13 @@ namespace Scraping.Scrapingg
                 }
                 return ozellik;
             }
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 40; i++)
             {
                 Computers obj = new Computers();
                 var th_sayisi = 0;
                 var td_sayisi = 0;
                 var a = 0;
                 var veri = "";
-                string ozellik = "";
-                var marka = "";
                 var sitehtml = "https://www.teknosa.com" + URLLER[i];
                 var html = GetHtml(sitehtml);
                 var links = html.CssSelect("div.ptf-item");
@@ -95,9 +100,7 @@ namespace Scraping.Scrapingg
                         foreach (var lin1k in mainname)
                         {
                             obj.Marka = lin1k.InnerHtml;
-
                         }
-
 
                     }
                     catch (Exception ex)
@@ -105,7 +108,6 @@ namespace Scraping.Scrapingg
                         Console.WriteLine(ex.ToString());
                     }
                 }
-
                 foreach (var link in links)
                 {
                     try
@@ -122,7 +124,6 @@ namespace Scraping.Scrapingg
                         Console.WriteLine(ex.ToString());
                     }
                 }
-
                 var deneme = ' ';
                 for (int k = 0; k < veri.Length; k++)
                 {
@@ -198,17 +199,14 @@ namespace Scraping.Scrapingg
                         a = td_bulma(veri, th_sayisi, td_sayisi, k);
                         obj.Agırlık = Veri_Cekme(veri, a);
                     }
-
                     obj.Link = URLLER[i];
-                    if (obj.Marka != null)
-                    {
-                        pc.Add(obj);
-                    }
+                    obj.Fiyat = Fiyatlar[i];
+
                 }
+                pc.Add(obj);
             }
             return pc;
         }
-
         public static HtmlNode GetHtml(string URL)
         {
             _scrapBrowser.IgnoreCookies = true;
@@ -218,5 +216,4 @@ namespace Scraping.Scrapingg
             return _webpage.Html;
         }
     }
-
 }
