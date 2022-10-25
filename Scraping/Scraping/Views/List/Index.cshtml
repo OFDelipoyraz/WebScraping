@@ -1,22 +1,404 @@
-﻿@{
-    Layout = null;
-    var xxx = (List < Computers > )ViewData["Trendyol"];
+﻿@using Scraping.Models;
+@{
+    Layout =  null;
+     var pc = (List<Computers>)ViewData["PC"];
 }
 
-<html>
-    <head>
-        <link rel="stylesheet" href="~/Content/Css/List.css">
-    </head>
-    <body>
-      <div class="nav">
-         @xxx[0].Model
-         @xxx[1].Model
-         @xxx[2].Model
-         @xxx[3].Model
-         @xxx[4].Model
-         @xxx[5].Model
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<!DOCTYPE html>
 
+<html lang="en">
+ <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="aaa.css" />
+  </head>
+  <body>
+      
+    <nav class="nav">
+      <img src="Content/images/logo.png" alt="foto" />
+
+      <p>
+        <font face="Georgia" size="10px" color="white"> <b>TEKNOPAZAR</b></font>
+      </p>
+      <input placeholder="Ne aramıştınız ?" />
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <ul>
+        <li>Ana Sayfa</li>
+        <li>İletişim</li>
+        <li>Hakkımızda</li>
+      </ul>
+      <div class="sepet">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        <p>Alışveriş Sepetiniz</p>
+      </div>
+
+      <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+      <a href="/Admin/Index" > git </a>
+    </nav>
+    <div class="container">
+        <div class="menu">
+          <div>
+            <select value="bbbb" class="filtre">
+              <option>Önerilen</option>
+              <option>Artan Fiyat</option>
+              <option>Azalan Fiyat</option>
+              <option>Puan</option>
+            </select>
+          </div>
+  
+          <h2>Müşteri Puanı</h2>
+          <div class="star">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            ve Üzeri
+          </div>
+          <div class="star">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            ve Üzeri
+          </div>
+          <div class="star">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            ve Üzeri
+          </div>
+          <div class="star">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            ve Üzeri
+          </div>
+  
+          <h2>Marka</h2>
+          <select class="marka" name="Marka" size="5">
+            <option value="Acer">Acer</option>
+            <option value="Apple">Apple</option>
+            <option value="Asus">Asus</option>
+            <option value="Dell">Dell</option>
+            <option value="Hp">Hp</option>
+            <option value="Huawei">Huawei</option>
+            <option value="Lenovo">Lenovo</option>
+            <option value="Monster">Monster</option>
+            <option value="MSI">MSI</option>
+          </select>
+          <h2>Fiyat</h2>
+          <div class="fiyat">
+            <input type="checkbox" />
+            <label>En fazla 5000</label>
+            <input type="checkbox" />
+            <label>5000-10000</label>
+            <input type="checkbox" />
+            <label>10000-15000</label>
+            <input type="checkbox" />
+            <label>15000-20000</label>
+            <input type="checkbox" />
+            <label>20000-40000</label>
+            <input type="checkbox" />
+            <label>40000 üzeri</label>
+          </div>
+
+          <h2>RAM Bellek Boyutu</h2>
+          <div class="ram">
+            <input type="checkbox" />
+            <label>2 GB</label>
+            <input type="checkbox" />
+            <label>4 GB</label>
+            <input type="checkbox" />
+            <label>8 GB</label>
+            <input type="checkbox" />
+            <label>16 GB</label>
+            <input type="checkbox" />
+            <label>32 GB</label>
+            <input type="checkbox" />
+            <label>64 GB</label>
+           </div>
+
+          
+        </div>
+        <div class="urunler"></div>
+        </div>
 
       </div>
-    </body>
+
+  <script>
+      console.log("dddd");
+      @inject IJsonHelper Json;
+      var PC =  @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(pc) as String);
+    PC.forEach(listPublications);
+
+    function listPublications(item) {
+      const container = document.querySelector(".urunler");
+      const urun = document.createElement("div");
+      const foto = document.createElement("div");
+      const img = document.createElement("img");
+      const z1 = document.createElement("h2");
+      const z2 = document.createElement("h2");
+      const z3 = document.createElement("h2");
+      const z4 = document.createElement("h2");
+      const z5 = document.createElement("h2");
+      const z6 = document.createElement("h2");
+      const z7 = document.createElement("h2");
+      const z8 = document.createElement("h2");
+      const z9 = document.createElement("h2");
+      const z10 = document.createElement("h2");
+      const z11 = document.createElement("h2");
+      const z12 = document.createElement("h2");
+      const z13 = document.createElement("h2");
+      const z14 = document.createElement("h2");
+      const z15 = document.createElement("h2");
+      const span = document.createElement("span");
+      const p = document.createElement("p");
+      img.src = "/Content/images/foto.jpg";
+      z1.innerText = "Marka:" + item.Marka;
+      z2.innerText = "Model:";
+      z3.innerText = "Fiyat";
+      z4.innerText = "İşletim Sistemi:";
+      z5.innerText = "İşlemci:";
+      z6.innerText = "İşlemci Modeli:";
+      z7.innerText = "Fiyat";
+      z8.innerText = "İşletim Sistemi:";
+      z9.innerText = "İşlemci:";
+      z10.innerText = "RAM:";
+      z11.innerText = "Disk Kapasitesi:";
+      z12.innerText = "Ekran Boyutu:";
+      z13.innerText = "Çözünürlük:";
+      z14.innerText = "Ağırlık:";
+      z15.innerText = "Puan:";
+      urun.className = "urun";
+      foto.className = "foto";
+      img.width = 200;
+      foto.appendChild(img);
+      urun.appendChild(foto);
+      urun.appendChild(z1);
+      urun.appendChild(z2);
+      urun.appendChild(z3);
+      urun.appendChild(z4);
+      urun.appendChild(z5);
+      urun.appendChild(z6);
+      urun.appendChild(z7);
+      urun.appendChild(z8);
+      urun.appendChild(z9);
+      urun.appendChild(z10);
+      urun.appendChild(z11);
+      urun.appendChild(z12);
+      urun.appendChild(z13);
+      urun.appendChild(z14);
+      urun.appendChild(z15);
+      urun.appendChild(p);
+      urun.appendChild(span);
+      container.appendChild(urun);
+    }
+  </script>
+
+    <style>
+    * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+.body {
+  display: flex;
+}
+.nav {
+  height: 70px;
+  width: 1900px;
+  background-color: rgb(19, 25, 33);
+  display: flex;
+}
+.nav p {
+  height: 70px;
+  width: 200px;
+  font-size: 25px;
+  text-align: center;
+  padding: 20px 0px;
+}
+.nav input {
+  height: 40px;
+  width: 700px;
+  border-radius: 5px 0px 0px 5px;
+  margin-left: 50px;
+  margin-top: 15px;
+  background-color: white;
+}
+::placeholder {
+  text-align: center;
+}
+.nav ul {
+  width: 350px;
+  height: 40px;
+  margin: 15px 0 0 25px;
+}
+.nav li {
+  float: left;
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 18px;
+}
+.sepet {
+  border-radius: 10px;
+  border: 2px solid grey;
+  height: 40px;
+  width: 100px;
+  margin-top: 15px;
+  display: flex;
+}
+.sepet i {
+  color: aliceblue;
+  margin: 5px 0px 0px 5px;
+  font-size: 25px;
+}
+.sepet p {
+  color: #c8cae8;
+  font-size: 15px;
+  padding: 2px 0 0 0;
+}
+.nav a {
+  border-radius: 10px;
+  border: 2px solid grey;
+  height: 40px;
+  width: 150px;
+  margin-top: 15px;
+  margin-left: 20px;
+  color: #c8cae8;
+  margin-left: 50px;
+}
+.container {
+  background-color: blueviolet;
+  width: 1900px;
+  height: 4000px;
+  display: flex;
+}
+.menu {
+  width: 280px;
+  height: 4000px;
+  background-color: #c8cae8;
+}
+.menu h2 {
+  text-align: center;
+  font-size: 15px;
+  background-color: #f3f3f3;
+  height: 30px;
+  margin: 20px 20px;
+  border-radius: 5px;
+  padding-top: 10px;
+}
+.menu span {
+  padding: 5px 0px;
+}
+.star {
+  margin-left: 60px;
+}
+.checked {
+  color: orange;
+}
+.filtre {
+  text-align: center;
+  font-size: 15px;
+  background-color: #f3f3f3;
+  height: 20px;
+  width: 150px;
+  margin: 20px 50px;
+  border-radius: 5px;
+}
+.marka {
+  margin-left: 75px;
+  border-radius: 10px;
+  border: 3px solid grey;
+}
+.marka option {
+  width: 100px;
+  border: 1px solid grey;
+  text-align: center;
+}
+.fiyat {
+  width: 200px;
+  height: 110px;
+  margin-left: 30px;
+}
+.ram {
+  width: 150px;
+  height: 110px;
+  margin-left: 50px;
+}
+.urunler {
+  width: 1700px;
+  height: 4000px;
+  background-color: #e5e4ed;
+}
+.urun {
+  margin-top: 30px;
+  margin-left: 70px;
+  width: 300px;
+  height: 550px;
+  float: left;
+  display: block;
+  background-color: rgb(248, 248, 248);
+  text-align: center;
+  border-radius: 10px;
+}
+.urun h2 {
+  margin-top: 3px;
+  background-color: #c9c6dd;
+  width: 300px;
+  height: 18px;
+}
+.urun span {
+  color: orange;
+}
+.foto {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(240, 240, 240);
+  margin: auto;
+  margin-top: 20px;
+}
+
+input {
+  margin-left: 50px;
+}
+label {
+  margin-right: 40px;
+}
+.fa-user-circle-o {
+  color: aliceblue;
+  margin: 15px 0 0 50px;
+  font-size: 40px;
+}
+
+.fa-search {
+  background-color: rgb(254, 189, 105);
+  margin-top: 15px;
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+  border-radius: 0px 5px 5px 0px;
+  padding: 10px 10px;
+}
+
+
+    </style>
+  </body>
 </html>

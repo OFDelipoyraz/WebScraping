@@ -22,6 +22,7 @@ namespace Scraping.Scrapingg
             for (int k = 1; k < 3; k++)
             {
                 var sitehtml = "https://www.teknosa.com/laptop-notebook-c-116004?s=%3Arelevance&page=";
+
                 var html = GetHtml(sitehtml + k);
                 var links = html.CssSelect("div.prd");
                 foreach (var link in links)
@@ -197,11 +198,11 @@ namespace Scraping.Scrapingg
                     {
                         k = k + 10;
                         a = td_bulma(veri, th_sayisi, td_sayisi, k);
-                        obj.Agırlık = Veri_Cekme(veri, a);
+                        obj.Agirlik = Veri_Cekme(veri, a);
                     }
                     obj.Link = URLLER[i];
                     obj.Fiyat = Fiyatlar[i];
-
+                    obj.Site_Id = 3;
                 }
                 pc.Add(obj);
             }

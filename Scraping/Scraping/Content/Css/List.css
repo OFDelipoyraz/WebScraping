@@ -1,5 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.body {
+    display: flex;
+}
+
 .nav {
-    background-color: black;
-    height: 60px;
-    width: 1900px;
+    height: 70px;
+    width: 1500px;
+    background-color: rgb(19, 25, 33);
+    display: flex;
+}
+
+    .nav p {
+        height: 70px;
+        width: 200px;
+        font-size: 25px;
+        text-align: center;
+        padding: 20px 0px;
+    }
+
+    .nav input {
+        height: 40px;
+        width: 500px;
+        border-radius: 5px 0px 0px 5px;
+        margin-left: 50px;
+        margin-top: 15px;
+        background-color: white;
+    }
+
+::placeholder {
+    text-align: center;
+}
+
+.nav ul {
+    width: 350px;
+    height: 40px;
+    margin: 15px 0 0 25px;
+}
+
+.nav li {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 18px;
+}
+
+.container {
+    background-color: blueviolet;
+    width: 1500px;
+    height: 1000px;
+    display: flex;
+}
+
+.menu {
+    width: 200px;
+    height: 1000px;
+    background-color: #c8cae8;
+}
+
+    .menu h2 {
+        text-align: center;
+        font-size: 15px;
+        background-color: #f3f3f3;
+        height: 30px;
+        margin: 20px 20px;
+        border-radius: 5px 5px 5px 5px;
+        padding-top: 10px;
+    }
+
+    .menu span {
+        padding: 5px 0px;
+    }
+
+.star {
+    margin-left: 30px;
+}
+
+.checked {
+    color: orange;
+}
+
+.marka {
+    margin-left: 50px;
+    border-radius: 10px;
+    border: 3px solid grey;
+}
+
+    .marka option {
+        width: 100px;
+        border: 1px solid grey;
+        text-align: center;
+    }
+
+.urunler {
+    width: 1300px;
+    height: 1000px;
+    background-color: #e5e4ed;
+}
+
+.urun {
+    margin-top: 30px;
+    margin-left: 60px;
+    width: 250px;
+    height: 400px;
+    float: left;
+    display: block;
+    background-color: #f3f3f3;
+    text-align: center;
+    border-radius: 10px;
+}
+
+    .urun h2 {
+        margin-top: 10px;
+    }
+
+    .urun span {
+        color: orange;
+    }
+
+.foto {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(240, 240, 240);
+    margin: auto;
+    margin-top: 20px;
+}
+
+.block {
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 250px;
+    height: 400px;
+    float: left;
+    display: block;
+    background-color: #f3f3f3;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+
+input {
+    margin-left: 50px;
+}
+
+label {
+    margin-right: 40px;
+}
+
+.fa-user-circle-o {
+    color: aliceblue;
+    margin: 15px 0 0 50px;
+    font-size: 40px;
+}
+
+.sepet {
+    border-radius: 10px;
+    border: 2px solid grey;
+    height: 40px;
+    width: 100px;
+    margin-top: 15px;
+    margin-left: 20px;
+    display: flex;
+}
+
+    .sepet i {
+        color: aliceblue;
+        margin: 5px 0px 0px 5px;
+        font-size: 25px;
+    }
+
+    .sepet p {
+        color: #c8cae8;
+        font-size: 15px;
+        padding: 2px 0 0 0;
+    }
+
+.fa-search {
+    background-color: rgb(254, 189, 105);
+    margin-top: 15px;
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+    border-radius: 0px 5px 5px 0px;
+    padding: 10px 10px;
 }

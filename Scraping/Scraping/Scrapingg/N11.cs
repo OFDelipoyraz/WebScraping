@@ -19,7 +19,7 @@ namespace Scraping.Scrapingg
             List<String> Fiyatlar = new List<String>();
             var url = "";
             var para = "";
-            for (int k = 1; k < 2; k++)
+            for (int k = 1; k <3;k++)
             {
                 var sitehtml = "https://www.n11.com/arama?q=notebook=";
                 var html = GetHtml(sitehtml + k);
@@ -43,8 +43,20 @@ namespace Scraping.Scrapingg
                             {
                                 if (url[20] == 'u' && url[21] == 'r' && url[22] == 'u' && url[23] == 'n')
                                 {
-                                    URLLER.Add(lin1k.Attributes["href"].Value);
-                                    Console.WriteLine(lin1k.Attributes["href"].Value);
+                                    var kontrol = 0;
+                                    for (int j = 0; j < URLLER.Count; j++)
+                                    {
+                                        if (lin1k.Attributes["href"].Value == URLLER[j])
+                                        {
+                                            kontrol++;
+                                            break;
+                                        }
+                                    }
+                                    if (kontrol == 0)
+                                    {
+                                        URLLER.Add(lin1k.Attributes["href"].Value);
+                                    }
+                                    kontrol = 0;
                                 }
                             }
                         }
@@ -95,7 +107,7 @@ namespace Scraping.Scrapingg
                 }
                 return ozellik;
             }
-            for (int s = 0; s < 20; s++)
+            for (int s = 0; s < 40; s++)
             {
                 var veri = "";
                 string ozellik = "";
@@ -169,7 +181,7 @@ namespace Scraping.Scrapingg
                     else if (veri[k] == 'A' && veri[k + 1] == 'ğ' && veri[k + 2] == 'ı' && veri[k + 3] == 'r' && veri[k + 4] == 'l' && veri[k + 5] == 'ı' && veri[k + 6] == 'k' && veri[k + 7] == '<')
                     {
                         k = k + 55;
-                        obj.Agırlık = Veri_Cekme(veri, k);
+                        obj.Agirlik = Veri_Cekme(veri, k);
                     }//Ekran Çözünürlüğü
                     else if (veri[k] == 'E' && veri[k + 1] == 'k' && veri[k + 2] == 'r' && veri[k + 3] == 'a' && veri[k + 4] == 'n' && veri[k + 5] == ' ' && veri[k + 6] == 'Ç' && veri[k + 7] == 'ö' && veri[k + 17] == '<')
                     {
@@ -188,6 +200,7 @@ namespace Scraping.Scrapingg
                     }
                     obj.Link = URLLER[s];
                     obj.Fiyat = Fiyatlar[s];
+                    obj.Site_Id = 1;
                 }
                 pc.Add(obj);
             }

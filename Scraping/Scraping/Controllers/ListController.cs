@@ -11,22 +11,44 @@ namespace Scraping.Controllers
         SqlConnection connection = new SqlConnection("Data Source=DESKTOP-98HOOEP;Initial Catalog=WebScrapingProject;Integrated Security=True");
         public IActionResult Index()
         {
-
+            /*
             //Teknosa Scraping = new Teknosa();
             //List<Computers> Liste = Scraping.teknosa();
             //N11 Scraping = new N11();
             //List<Computers> Liste = Scraping.n11();
-            Amazon Scraping = new Amazon();
-            List<Computers> Liste = Scraping.amazon();
-            ViewData["Trendyol"] = Liste;
-            DeleteData();
+            //Amazon Scraping = new Amazon();
+            //List<Computers> Liste = Scraping.amazon();
+            //Vatan Scraping = new Vatan();
+            //List<Computers> Liste = Scraping.vatan();
+            
+         //DeleteData();
             foreach (Computers Computers in Liste)
             {
                 Add_Data(Computers);
             }
+            */
+            List<Computers> Liste = new List<Computers>();
 
-
+            ViewData["PC"] = Fetch_Data(Liste);
+            
             return View();
+        }
+
+        private List<Computers> Fetch_Data(List<Computers> Liste)
+        {
+            connection.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = "SELECT * FROM PC";
+            cmd.Connection = connection;
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Liste.Add(new Computers(Convert.ToInt32(reader["Id"]), Convert.ToString(reader["Marka"]), Convert.ToString(reader["Model"]), Convert.ToString(reader["Fiyat"]), Convert.ToString(reader["Isletim_Sistemi"]), Convert.ToString(reader["Islemci"]), Convert.ToString(reader["Islemci_Modeli"]), Convert.ToString(reader["Islemci_Hizi"]), Convert.ToString(reader["RAM"]), Convert.ToString(reader["RAM_Turu"]), Convert.ToString(reader["Disk_Kapasitesi"]), Convert.ToString(reader["Ekran_Boyutu"]), Convert.ToString(reader["Cozunurluk"]), Convert.ToString(reader["Agirlik"]), Convert.ToInt32(reader["Site_Id"]), Convert.ToString(reader["Link"]), Convert.ToString(reader["Genel_Isim"]), Convert.ToString(reader["Puan"])));
+                    
+            }
+            connection.Close();
+            return Liste;
         }
         private void DeleteData()
         {
@@ -75,7 +97,9 @@ namespace Scraping.Controllers
                 "@cozunurluk," +
                 "@agirlik," +
                 "@site_id," +
-                "@link)";
+                "@link," +
+                "@genel_isim," +
+                "@puan)";
             cmd.Connection = connection;
             cmd.Parameters.AddWithValue("@marka", computers.Marka ?? (object)DBNull.Value);
             cmd.Parameters.AddWithValue("@model", computers.Model ?? (object)DBNull.Value);
@@ -89,9 +113,11 @@ namespace Scraping.Controllers
             cmd.Parameters.AddWithValue("@disk_kapasitesi", computers.Disk_Kapasitesi ?? (object)DBNull.Value);
             cmd.Parameters.AddWithValue("@ekran_boyutu", computers.Ekran_Boyutu ?? (object)DBNull.Value);
             cmd.Parameters.AddWithValue("@cozunurluk", computers.Cozunurluk ?? (object)DBNull.Value);
-            cmd.Parameters.AddWithValue("@agirlik", computers.Agırlık ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@agirlik", computers.Agirlik ?? (object)DBNull.Value);
             cmd.Parameters.AddWithValue("@site_id", computers.Site_Id  );
             cmd.Parameters.AddWithValue("@link", computers.Link ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@genel_isim", computers.Genel_Isim ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@puan", computers.Puan ?? (object)DBNull.Value);
             cmd.ExecuteNonQuery();
             connection.Close();
 
