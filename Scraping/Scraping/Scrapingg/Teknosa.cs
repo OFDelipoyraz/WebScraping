@@ -19,7 +19,7 @@ namespace Scraping.Scrapingg
             List<String> Fiyatlar = new List<String>();
             var yeni = ' ';
             var yeni_para = "";
-            for (int k = 1; k < 3; k++)
+            for (int k = 1; k < 16; k++)
             {
                 var sitehtml = "https://www.teknosa.com/laptop-notebook-c-116004?s=%3Arelevance&page=";
 
@@ -82,7 +82,7 @@ namespace Scraping.Scrapingg
                 }
                 return ozellik;
             }
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < 300; i++)
             {
                 Computers obj = new Computers();
                 var th_sayisi = 0;
@@ -200,7 +200,7 @@ namespace Scraping.Scrapingg
                         a = td_bulma(veri, th_sayisi, td_sayisi, k);
                         obj.Agirlik = Veri_Cekme(veri, a);
                     }
-                    obj.Link = URLLER[i];
+                    obj.Link = "https://www.teknosa.com" + URLLER[i];
                     obj.Fiyat = Fiyatlar[i];
                     obj.Site_Id = 3;
                 }

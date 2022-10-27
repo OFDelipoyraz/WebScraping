@@ -12,159 +12,357 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+    <body>
     <div class="baslik">
-      <h2>Güncelle</h2>
-      <h2>Ekle</h2>
+      <h2>Ürün Ekle</h2>
+      <h2>Ürün Güncelle</h2>
     </div>
     <div class="container">
-      <div class="ekle">
+        @using (Html.BeginForm("Add", "Admin", FormMethod.Post))
+        {
+        <div class="ekle">
         <label for="email">Marka</label>
-        <input type="email" name="email" id="email" />
+        <input type="text" name="marka" id="marka" />
         <hr />
         <label for="email">Model</label>
-        <input type="email" name="email" id="email" />
+        <input type="text" name="model" id="model" />
         <hr />
         <label for="email">Fiyat</label>
-        <input type="email" name="email" id="email" />
+        <input type="text" name="fiyat" id="fiyat" />
         <hr />
         <label for="email">Isletim Sistemi</label>
-        <input type="email" name="email" id="email" />
+        <input type="text" name="isletim_Sistemi" id="isletim_Sistemi" />
         <hr />
         <label for="email">İşlemci</label>
-        <input type="email" name="email" id="email" />
+        <input type="text" name="islemci" id="islemci" />
         <hr />
         <label for="email">İşlemci Modeli</label>
-        <input type="email" name="email" id="email" />
+        <input type="text" name="islemci_Modeli" id="islemci_Modeli" />
         <hr />
         <label for="email">İşlemci Hızı</label>
-        <input type="email" name="email" id="email" />
+        <input type="text" name="islemci_Hizi" id="islemci_Hizi" />
         <hr />
         <label for="email">Ram</label>
-        <input type="email" name="email" id="email" />
+        <input type="text" name="rAM" id="rAM" />
         <hr />
         <label for="email">Ram Türü</label>
-        <input type="email" name="email" id="email" />
+        <input type="text" name="rAM_Turu" id="rAM_Turu" />
         <hr />
         <label for="email">Disk Kapasitesi</label>
-        <input type="email" name="email" id="email" />
+        <input type="text" name="disk_Kapasitesi" id="disk_Kapasitesi" />
         <hr />
         <label for="email">Ekran Boyutu</label>
-        <input type="email" name="email" id="email" />
+        <input type="text" name="ekran_Boyutu" id="ekran_Boyutu" />
         <hr />
         <label for="email">Çözünürlük</label>
-        <input type="email" name="email" id="email" />
+        <input type="text" name="cozunurluk" id="cozunurluk" />
         <hr />
         <label for="email">Ağırlık</label>
-        <input type="email" name="email" id="email" />
+        <input type="text" name="agirlik" id="agirlik" />
+        <input type="submit" name="ekle" id="ekle" value="Ekle" />
+        </div>
+
+        }
+
+        @using (Html.BeginForm("Update", "Admin", FormMethod.Post))
+        {
+        <div class="guncelle">
+        <label for="email">ID</label>
+        <input type="id" name="id" id="id" />
+        <hr />
+        <label for="email">Marka</label>
+        <input type="text" name="marka" id="marka" />
+        <hr />
+        <label for="email">Model</label>
+        <input type="text" name="model" id="model" />
+        <hr />
+        <label for="email">Fiyat</label>
+        <input type="text" name="fiyat" id="fiyat" />
+        <hr />
+        <label for="email">Isletim Sistemi</label>
+        <input type="text" name="isletim_Sistemi" id="isletim_Sistemi" />
+        <hr />
+        <label for="email">İşlemci</label>
+        <input type="text" name="islemci" id="islemci" />
+        <hr />
+        <label for="email">İşlemci Modeli</label>
+        <input type="text" name="islemci_Modeli" id="islemci_Modeli" />
+        <hr />
+        <label for="email">İşlemci Hızı</label>
+        <input type="text" name="islemci_Hizi" id="islemci_Hizi" />
+        <hr />
+        <label for="email">Ram</label>
+        <input type="text" name="rAM" id="rAM" />
+        <hr />
+        <label for="email">Ram Türü</label>
+        <input type="text" name="rAM_Turu" id="rAM_Turu" />
+        <hr />
+        <label for="email">Disk Kapasitesi</label>
+        <input type="text" name="disk_Kapasitesi" id="disk_Kapasitesi" />
+        <hr />
+        <label for="email">Ekran Boyutu</label>
+        <input type="text" name="ekran_Boyutu" id="ekran_Boyutu" />
+        <hr />
+        <label for="email">Çözünürlük</label>
+        <input type="text" name="cozunurluk" id="cozunurluk" />
+        <hr />
+        <label for="email">Ağırlık</label>
+        <input type="text" name="agirlik" id="agirlik" />
+        <input type="submit" name="guncelle1" id="guncelle1" value="Güncelle" />
       </div>
-      <div class="guncelle">
-        <label for="email">Marka</label>
-        <input type="email" name="email" id="email" />
-        <hr />
-        <label for="email">Model</label>
-        <input type="email" name="email" id="email" />
-        <hr />
-        <label for="email">Fiyat</label>
-        <input type="email" name="email" id="email" />
-        <hr />
-        <label for="email">Isletim Sistemi</label>
-        <input type="email" name="email" id="email" />
-        <hr />
-        <label for="email">İşlemci</label>
-        <input type="email" name="email" id="email" />
-        <hr />
-        <label for="email">İşlemci Modeli</label>
-        <input type="email" name="email" id="email" />
-        <hr />
-        <label for="email">İşlemci Hızı</label>
-        <input type="email" name="email" id="email" />
-        <hr />
-        <label for="email">Ram</label>
-        <input type="email" name="email" id="email" />
-        <hr />
-        <label for="email">Ram Türü</label>
-        <input type="email" name="email" id="email" />
-        <hr />
-        <label for="email">Disk Kapasitesi</label>
-        <input type="email" name="email" id="email" />
-        <hr />
-        <label for="email">Ekran Boyutu</label>
-        <input type="email" name="email" id="email" />
-        <hr />
-        <label for="email">Çözünürlük</label>
-        <input type="email" name="email" id="email" />
-        <hr />
-        <label for="email">Ağırlık</label>
-        <input type="email" name="email" id="email" />
+        }
+       
+      <div class="degis">
+        <div class="fiyat">
+          <h1>Fiyat Güncelle</h1>
+          <h3>Ürün ID</h3>
+           @using (Html.BeginForm("FiyatUpdate", "Admin", FormMethod.Post)) {    
+          <input type="text"  name="id" id="id"/>
+          <h3>Yeni Fiyat</h3>
+           <input type="text" name="fiyat" id="fiyat"/>
+          <input name="guncelle2" id="guncelle2" value="Güncelle" type="submit" />}
+        </div>
+        <div class="vr"></div>
+        <div class="puan">
+          <h1>Puan Güncelle</h1> 
+          <h3>Ürün ID</h3>
+          @using (Html.BeginForm("PuanUpdate", "Admin", FormMethod.Post)) {    
+          <input type="text"  name="id" id="id"/>
+          <h3>Yeni Puan</h3>
+            <input type="text" name="puan" id="puan"/>
+          <input name="guncelle3" id="guncelle3" value="Güncelle" type="submit" />
+          }
+        </div>
+        <div class="vr"></div>
+        <div class="sil">
+          <h1>Ürün Sil</h1>
+          <h3>Ürün ID</h3>
+          @using (Html.BeginForm("Delete", "Admin", FormMethod.Post)) {            
+              <input type="text" name="id" id="id"/>
+              <input name="sil" id="sil" value="Sil" type="submit" />
+          }
+           <div class="donus">
+            <a href="/List/Index"> Teknopazar'a Git </a>
+          </div>
+
+        </div> 
+        
       </div>
     </div>
     <style>
-        .container {
+html {
+  background-color: #977dd2;
+}
+.container {
   display: flex;
   width: 1920px;
-  height: 1000px;
+  height: 900px;
 }
 .baslik {
   width: 1920px;
-  height: 70px;
-
+  height: 90px;
   display: flex;
 }
 .baslik h2 {
-  background-color: brown;
-  width: 150px;
-  height: 30px;
+  width: 220px;
+  height: 35px;
   border-radius: 10px;
-  margin-left: 150px;
-  padding: 20px 20px;
+  border: 2px solid grey;
+  background-color: #bfefed;
+  text-align: center;
+  margin-left: 140px;
+  margin-right: 80px;
+  padding-top: 10px;
 }
 .ekle {
   width: 400px;
-  height: 600px;
-  background-color: aliceblue;
+  height: 710px;
+  background-color: #eefff8;
   border: 2px solid grey;
   border-radius: 10px;
   text-align: center;
-  margin-left: 50px;
+  margin-left: 40px;
   margin-top: 30px;
+  padding-top: 20px;
 }
 .ekle input {
   width: 200px;
   height: 20px;
-  margin-top: 10px;
-  border-radius: 2px;
+  margin-top: 0;
+  border-radius: 5px;
   margin-left: 10px;
   margin-right: 20px;
   float: right;
 }
-.ekle label {
-  background-color: aqua;
-  width: 100px;
+hr {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 .guncelle {
   width: 400px;
-  height: 600px;
-  background-color: bisque;
+  height: 750px;
+  background-color: #eefcff;
   border: 2px solid grey;
   border-radius: 10px;
   text-align: center;
-  margin-left: 50px;
+  margin-left: 40px;
   margin-top: 30px;
+  padding-top: 20px;
 }
 .guncelle input {
   width: 200px;
   height: 20px;
-  margin-top: 10px;
-  border-radius: 2px;
+  margin-top: 0;
+  border-radius: 5px;
   margin-left: 10px;
   margin-right: 20px;
   float: right;
 }
-.guncelle label {
-  background-color: aqua;
-  width: 100px;
+.degis {
+  width: 900px;
+  height: 720px;
+  background-color: aliceblue;
+  border: 2px solid grey;
+  border-radius: 10px;
+  margin-left: 40px;
+  margin-top: 30px;
+  display: flex;
 }
+
+.degis input {
+  width: 200px;
+  height: 20px;
+  border-radius: 5px;
+  margin-left: 50px;
+}
+.degis h1 {
+  width: 220px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid grey;
+  margin-left: 50px;
+  text-align: center;
+}
+.degis h3 {
+  width: 160px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  margin-left: 80px;
+  margin-top: 40px;
+  text-align: center;
+}
+.degis button {
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 100px;
+  margin-left: 70px;
+  background-color: aquamarine;
+}
+.fiyat {
+  width: 300px;
+  height: 720px;
+  background-color: #eef1ff;
+  border-radius: 10px 0px 0px 10px;
+}
+.puan {
+  width: 300px;
+  height: 720px;
+  background-color: #fbeeff;
+}
+.sil {
+  width: 300px;
+  height: 720px;
+  background-color: #ffeef8;
+  border-radius: 0px 10px 10px 0px;
+}
+.vr {
+  width: 2px;
+  height: 720px;
+  background-color: grey;
+}
+.don {
+  width: 200px;
+  height: 70px;
+  margin-top: 200px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: rgb(184, 83, 113);
+  border-radius: 10px;
+}
+.don a {
+  text-align: center;
+}
+#ekle {
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 10px;
+  background-color: aquamarine;
+}
+#guncelle3 {
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 100px;
+  margin-left:70px;
+  background-color: aquamarine;
+}
+#guncelle2 {
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 100px;
+  margin-left:70px;
+  background-color: aquamarine;
+}
+#guncelle1 {
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left:70px;
+  background-color: aquamarine;
+}
+#sil {
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 210px;
+  margin-left: 70px;
+  background-color: aquamarine;
+}
+#don {
+  width: 180px;
+  height: 70px;
+  border-radius: 10px;
+  margin-top: 170px;
+  margin-left: 60px;
+  background-color: rgb(187, 112, 206);
+}
+.donus {
+  width: 170px;
+  height: 50px;
+  border-radius: 10px;
+  margin-top: 120px;
+  margin-left: 65px;
+  text-align: center;
+
+  background-color: rgb(139, 8, 165);
+}
+.donus a{
+  color: white; 
+  padding-top: 30px;
+  margin:auto;
+  font-size:20px
+}
+
 
     </style>
   </body>

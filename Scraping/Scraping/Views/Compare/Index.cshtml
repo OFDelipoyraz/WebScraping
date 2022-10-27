@@ -1,0 +1,257 @@
+﻿
+@{
+    Layout = null;
+    var pc = (List<Computers>)ViewData["pc"];
+    var search = (List<Computers>)ViewData["search"];
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <nav class="nav">
+      <p>
+        <font face="Georgia" size="10px" color="white"> <b>UCUZCU.com</b></font>
+      </p>
+        @using (Html.BeginForm("Search", "Compare", FormMethod.Post))
+        {
+        <input type="text" name="model" id="model" placeholder="Ne aramıştınız?" />
+      
+        <input type="submit" name="ekle" id="ekle" value="Ara" />
+        }
+
+      <ul>
+        <li>Ana Sayfa</li>
+        <li>İletişim</li>
+        <li>Hakkımızda</li>
+        <li>Üye Ol</li>
+        <li>Giriş Yap</li>
+      </ul>
+      <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+      <a href="/List/Index"> Teknopazar'a Git </a>
+    </nav>
+
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+.body {
+  display: flex;
+  background-color: rgb(241, 245, 248);
+}
+.nav {
+  height: 70px;
+  width: 1900px;
+  background-color: rgb(19, 25, 33);
+  display: flex;
+}
+.nav p {
+  height: 70px;
+  width: 200px;
+  font-size: 25px;
+  text-align: center;
+  padding: 20px 0px;
+}
+#model {
+  height: 40px;
+  width: 700px;
+  border-radius: 5px 0px 0px 5px;
+  margin-left: 50px;
+  margin-top: 15px;
+  background-color: white;
+}
+::placeholder {
+  text-align: center;
+}
+.nav ul {
+  width: 550px;
+  height: 40px;
+  margin: 15px 0 0 25px;
+}
+.nav li {
+  float: left;
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 18px;
+}
+.fa-user-circle-o {
+  color: aliceblue;
+  margin: 15px 0 0 50px;
+  font-size: 40px;
+}
+
+.fa-search {
+  background-color: rgb(254, 189, 105);
+  margin-top: 15px;
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+  border-radius: 0px 5px 5px 0px;
+  padding: 10px 10px;
+}
+.nav a {
+  border-radius: 10px;
+  border: 2px solid grey;
+  height: 30px;
+  width: 150px;
+  margin-top: 15px;
+  margin-left: 20px;
+  color: #c8cae8;
+  margin-left: 50px;
+  padding-top: 10;
+  text-align: center;
+  font-size: 20px;
+}
+.container {
+  height: 700px;
+  width: 1808px;
+  margin-top: 100px;
+  margin-left: 100px;
+  display: flex;
+}
+
+.amazon {
+  height: 600px;
+  width: 300px;
+  text-align: center;
+  border: 2px solid grey;
+  border-radius: 20px;
+  background-color: #eefff8;
+}
+
+.teknosa {
+  height: 600px;
+  width: 300px;
+  text-align: center;
+  border: 2px solid grey;
+  border-radius: 20px;
+  margin-left: 30px;
+  background-color: #eefcff;
+}
+.vatan {
+  height: 600px;
+  width: 300px;
+  text-align: center;
+  border: 2px solid grey;
+  border-radius: 20px;
+  margin-left: 30px;
+  background-color: #eef1ff;
+}
+.n11 {
+  height: 600px;
+  width: 300px;
+  text-align: center;
+  border: 2px solid grey;
+  border-radius: 20px;
+  margin-left: 30px;
+  background-color: #fbeeff;
+}
+.teknopazar {
+  height: 600px;
+  width: 300px;
+  text-align: center;
+  border: 2px solid grey;
+  border-radius: 20px;
+  margin-left: 30px;
+  background-color: #ffeef8;
+}
+h1 {
+  width: 220px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid grey;
+  background-color: #12255e;
+  margin-left: 40px;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 30px;
+  color: aliceblue;
+}
+a {
+  text-align: center;
+  font-size: 30px;
+  color: aliceblue;
+}
+h2 {
+  margin-top: 40px;
+  font-size: 30px;
+  color: rgb(68, 112, 112);
+}
+h3 {
+  margin-top: 20px;
+  font-size: 20px;
+}
+.bbb {
+  margin-left: 40px;
+  margin-top: 50px;
+  width: 220px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid grey;
+  background-color: #000000;
+}
+.vvv {
+  margin-left: 40px;
+  margin-top: 50px;
+  width: 220px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid grey;
+  background-color: #000000;
+}
+
+.ccc {
+  margin-left: 40px;
+  margin-top: 50px;
+  width: 220px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid grey;
+  background-color: #000000;
+}
+.xxx {
+  margin-left: 40px;
+  margin-top: 50px;
+  width: 220px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid grey;
+  background-color: #000000;
+}
+
+.zzz {
+  margin-left: 40px;
+  margin-top: 50px;
+  width: 220px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid grey;
+  background-color: #000000;
+}
+.fa-arrow-right {
+  color: azure;
+  font-size: 20px;
+  margin-left: 25px;
+}
+#ekle {
+  width: 50px;
+  height: 40px;
+  background-color: yellowgreen;
+  margin-top: 15px;
+}
+
+    </style>
+  </body>
+</html>

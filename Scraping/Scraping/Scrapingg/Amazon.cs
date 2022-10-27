@@ -19,7 +19,7 @@ namespace Scraping.Scrapingg
             var para = "";
             List<String> URLLER = new List<String>();
             List<String> Fiyatlar = new List<String>();
-            for (int k = 1; k < 3; k++)
+            for (int k = 1; k < 11; k++)
             {
                 var sitehtml = "https://www.amazon.com.tr/s?i=computers&rh=n%3A12601898031&fs=true&page=";
                 var html = GetHtml(sitehtml + k);
@@ -64,7 +64,7 @@ namespace Scraping.Scrapingg
                 }
                 return ozellik;
             }
-            for (int s = 0; s < 40; s++)
+            for (int s = 0; s < 200; s++)
             {
                 var veri = "";
                 string ozellik = "";
@@ -198,7 +198,7 @@ namespace Scraping.Scrapingg
                         k = k + 84;
                         PC.Islemci_Hizi = Veri_Cekme(veri, k);
                     }
-                    PC.Link = URLLER[s];
+                    PC.Link = "https://www.amazon.com.tr"+ URLLER[s];
                     PC.Site_Id = 2;
                 }
                 pc.Add(PC);

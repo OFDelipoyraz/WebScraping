@@ -20,7 +20,7 @@ namespace Scraping.Scrapingg
             var URL_son = "";
             List<String> URLLER = new List<String>();
             List<String> Fiyatlar = new List<String>();
-            for (int k = 1; k < 3; k++)
+            for (int k = 1; k < 19; k++)
             {
                 var sitehtml = "https://www.vatanbilgisayar.com/notebook/?page=";
                 var html = GetHtml(sitehtml + k);
@@ -79,7 +79,7 @@ namespace Scraping.Scrapingg
                 }
                 return ozellik;
             }
-            for (int s = 0; s < 32; s++)
+            for (int s = 0; s < 288; s++)
             {
                 var veri = "";
                 var isim = "";
@@ -214,8 +214,9 @@ namespace Scraping.Scrapingg
                         k = k + 28;
                         PC.Agirlik = Veri_Cekme(veri, k);
                     }
-                    PC.Link = URLLER[s];
-                    PC.Site_Id = 4;
+                    PC.Link = "www.vatanbilgisayar.com/" +URLLER[s];
+                    PC.Site_Id = 5;
+                    PC.Puan = "4";
                 }
                 
                 pc.Add(PC);
